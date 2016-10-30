@@ -16,7 +16,7 @@ module Pux
   ) where
 
 import Control.Monad.Aff (Aff, launchAff, later)
-import Control.Monad.Aff.Unsafe (unsafeInterleaveAff)
+import Control.Monad.Aff.Unsafe (unsafeCoerceAff)
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Class (liftEff)
 import Control.Monad.Eff.Exception (EXCEPTION)
