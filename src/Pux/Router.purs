@@ -169,7 +169,7 @@ routeFromUrl url = case S.indexOf "?" url of
       where prependPath = lmap Path Cons
 
 parseQuery :: String -> RoutePart
-parseQuery s = Query <<< M.fromList <<< catMaybes <<< map part2tuple $ parts
+parseQuery s = Query <<< M.fromFoldable <<< catMaybes <<< map part2tuple $ parts
   where
   parts :: List String
   parts = fromFoldable $ S.split "&" $ S.drop 1 s
